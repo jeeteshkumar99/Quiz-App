@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>final result</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mainDiv{
+            width: 400px; 
+            height: 350px; 
+            text-align: center;
+            padding: 20px;
+            background-color: #f7f1f1;
+            border: 2px solid yellow;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            border-radius: 40px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        p{
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        .score{
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .icon{
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainDiv">
+        <h1>Result</h1>
+        <div class="icon">
+            <script>
+                var getscore = sessionStorage.getItem('scoress');
+
+                if (getscore >= 70) {
+                    document.write('<i class="fa-solid fa-square-check"></i>'); 
+                } else {
+                    document.write('<i class="fa-solid fa-rectangle-xmark"></i>'); 
+                }
+            </script>
+        </div>
+        <script>
+            var getscore = sessionStorage.getItem('scoress');
+
+            if (getscore >= 70) {
+                document.write('<p class="">Congratulations! You are passed.</p>');
+            } else {
+                document.write('<p class="">Sorry your are failed.</p>');
+            }
+
+            document.write('<p class="score">Your score is: ' + getscore + '%</p>');
+        </script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>
+
